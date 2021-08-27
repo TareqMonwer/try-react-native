@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "tnn-todo",
+    "slug": "tnn-todo",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "tnn-todo"
+}
