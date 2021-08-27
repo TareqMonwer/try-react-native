@@ -1,8 +1,10 @@
 import React from "react";
+import { View, StyleSheet } from "react-native";
 import Header from "./components/Header";
 import Middle from "./components/Middle";
-import { LIGHT, DARK } from "./constants/theme";
+import { LIGHT } from "./constants/theme";
 import Container from "./containers/Container";
+import ArticlesList from "./components/ArticlesList";
 
 export default function App() {
   const [theme, setTheme] = React.useState(LIGHT);
@@ -10,8 +12,19 @@ export default function App() {
 
   return (
     <Container>
-      <Header theme={theme} />
-      <Middle theme={theme} setTheme={handleSetTheme} />
+      <View style={styles.firstView}>
+        <Header theme={theme} />
+        <Middle theme={theme} setTheme={handleSetTheme} />
+      </View>
+      <View>
+        <ArticlesList />
+      </View>
     </Container>
   );
 }
+
+const styles = StyleSheet.create({
+  firstView: {
+    minHeight: '100vh'
+  }
+})
