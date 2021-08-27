@@ -3,6 +3,7 @@ import { View, Button } from "react-native";
 import { StyleSheet } from "react-native-web";
 import { navy, yellow } from "../constants/colors";
 import { getThemeName } from "../utils/theme";
+import HexColorInput from "./HexColorInput";
 
 const Middle = ({ theme, setTheme }) => {
   const styles = StyleSheet.create({
@@ -17,13 +18,17 @@ const Middle = ({ theme, setTheme }) => {
   const handleChangeTheme = () => {
     setTheme();
   };
+
   return (
     <View style={styles.container}>
-      <Button
-        title={`Switch to ${getThemeName(!theme)}`}
-        onPress={() => handleChangeTheme()}
-        color={theme ? navy : yellow}
-      />
+      <View style={{marginBottom: '.7rem'}}>
+        <Button
+          title={`Switch to ${getThemeName(!theme)}`}
+          onPress={() => handleChangeTheme()}
+          color={theme ? navy : yellow}
+        />
+      </View>
+      <HexColorInput />
     </View>
   );
 };
